@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="شركة أناقة الرافدين للأثاث في الموصل — أثاث منزلي ومكتبي ومعدني وكهربائيات، جملة ومفرد، وتجهيز دوائر الدولة.">
+<meta property="og:title" content="أناقة الرافدين للأثاث">
+<meta property="og:description" content="تجارة كافة أنواع الأثاث ومن مختلف المناشئ — الموصل، الدركزلية">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="img/logo.png">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>أناقة الرافدين للأثاث</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;800&family=Marcellus&display=swap">
+<style id="site-css">
+/* Layout: lilac-and-white showroom catalogue; one wide column with a sticky header, image-led sections, admin as a side drawer */
+:root{
+  --bg:#fcfbfe; --surface:#ffffff; --lilac:#8b68c6; --lilac-deep:#5e3f99; --lilac-soft:#f1ebfa; --lilac-line:#e2d6f3;
+  --ink:#221a33; --muted:#6c6382; --gold:#b48a3c; --ok:#2f8f5b; --danger:#b3404a;
+  --f-display:"El Messiri","Marcellus",Georgia,serif; --f-body:"Tajawal",system-ui,sans-serif; --f-en-display:"Marcellus","El Messiri",Georgia,serif;
+  --r:16px; --shadow:0 18px 40px -22px rgba(64,36,120,.35);
+  color-scheme:light;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7}
+*{box-sizing:border-box}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--lilac);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+[lang=en] .disp{font-family:var(--f-en-display);letter-spacing:.01em}
+.disp{font-family:var(--f-display);text-wrap:balance;line-height:1.25}
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(252,251,254,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--lilac-line)}
+.hdr .wrap{display:flex;align-items:center;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand img{width:52px;height:46px;object-fit:contain}
+.brand b{font-family:var(--f-display);font-size:19px;line-height:1.2;color:var(--lilac-deep);white-space:nowrap}
+.brand small{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.nav{display:flex;gap:4px;margin-inline-start:auto}
+.nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-weight:500;color:var(--muted)}
+.nav a:hover{background:var(--lilac-soft);color:var(--lilac-deep)}
+.hbtns{display:flex;gap:8px;align-items:center}
+.lang{border:1px solid var(--lilac-line);background:var(--surface);border-radius:999px;padding:7px 14px;font-weight:700;color:var(--lilac-deep)}
+.menu-btn{display:none;border:1px solid var(--lilac-line);background:var(--surface);border-radius:12px;width:42px;height:42px;align-items:center;justify-content:center}
+.menu-btn svg{width:22px;height:22px;stroke:var(--lilac-deep)}
+@media (max-width:900px){
+  .nav{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--lilac-line);padding:8px max(16px,env(safe-area-inset-left,0px)) 14px;margin:0}
+  .nav.open{display:flex}
+  .menu-btn{display:inline-flex;margin-inline-start:auto}
+  .hbtns .btn-wa{display:none}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:12px 22px;font-weight:700;text-decoration:none;font-size:16px}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-p{background:var(--lilac);color:#fff;box-shadow:0 10px 24px -12px rgba(94,63,153,.7)}
+.btn-p:hover{background:var(--lilac-deep)}
+.btn-o{background:var(--surface);color:var(--lilac-deep);border:1.5px solid var(--lilac-line)}
+.btn-o:hover{border-color:var(--lilac)}
+.btn-sm{padding:8px 14px;font-size:14px}
+
+/* hero */
+.hero{padding-block:28px 10px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(34px,5.2vw,64px);margin:0;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--lilac)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:52ch;margin:14px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{background:var(--lilac-soft);color:var(--lilac-deep);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.hero-img{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);max-width:100%}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img .tag{position:absolute;inset-inline-start:16px;bottom:16px;background:rgba(255,255,255,.92);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.hero-img .tag img{width:44px;height:40px;object-fit:contain}
+.hero-img .tag b{font-family:var(--f-display);color:var(--lilac-deep);font-size:15px;line-height:1.3}
+.hero-img .tag span{display:block;font-size:12px;color:var(--muted)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-img{order:-1}}
+
+/* sections */
+section{padding-block:56px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;margin-bottom:26px}
+.eyebrow{font-size:13px;font-weight:800;color:var(--lilac);letter-spacing:.04em}
+.sec-head h2{font-size:clamp(26px,3.4vw,40px);margin:4px 0 0}
+.sec-head p{margin:0;color:var(--muted);max-width:56ch}
+.band{background:linear-gradient(180deg,var(--lilac-soft),rgba(241,235,250,0))}
+
+/* departments */
+.depts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dept{background:var(--surface);border:1px solid var(--lilac-line);border-radius:var(--r);padding:22px 18px;text-align:center;text-decoration:none;transition:transform .2s,border-color .2s}
+.dept:hover{transform:translateY(-3px);border-color:var(--lilac)}
+.dept svg{width:44px;height:44px;stroke:var(--lilac-deep);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dept b{display:block;font-family:var(--f-display);font-size:22px;margin-top:6px}
+.dept span{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.depts{grid-template-columns:repeat(2,1fr)}}
+
+/* products */
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px;scrollbar-width:thin}
+.filters button{flex:none;border:1.5px solid var(--lilac-line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:700;color:var(--muted)}
+.filters button[aria-pressed=true]{background:var(--lilac);border-color:var(--lilac);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--lilac-line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-align:start;padding:0;transition:box-shadow .2s,transform .2s;color:inherit}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.card .ph{aspect-ratio:4/3;background:var(--lilac-soft);overflow:hidden;max-width:100%}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card:hover .ph img{transform:scale(1.04)}
+.card .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card .cat{font-size:12px;font-weight:800;color:var(--lilac)}
+.card .nm{font-weight:700;font-size:17px;line-height:1.4}
+.card .md{font-size:13px;color:var(--muted)}
+.card .md bdi{font-weight:800;color:var(--ink);letter-spacing:.03em}
+.empty{border:1.5px dashed var(--lilac-line);border-radius:var(--r);padding:30px;text-align:center;color:var(--muted)}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.why div{background:var(--surface);border-radius:var(--r);padding:20px;border:1px solid var(--lilac-line)}
+.why b{display:block;font-family:var(--f-display);font-size:20px;color:var(--lilac-deep);margin-bottom:4px}
+.why p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:900px){.why{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.why{grid-template-columns:1fr}}
+
+/* about + video */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.about p{color:var(--muted);font-size:17px;max-width:60ch}
+.vid{border-radius:20px;overflow:hidden;background:#140f1f;box-shadow:var(--shadow);aspect-ratio:16/9;max-width:100%}
+.vid video{width:100%;height:100%;display:block}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:12px}
+.gal button{border:0;padding:0;border-radius:14px;overflow:hidden;background:var(--lilac-soft)}
+.gal button:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:700px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gal button:first-child{grid-column:span 2;grid-row:span 1}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.cbox{background:var(--surface);border:1px solid var(--lilac-line);border-radius:22px;padding:24px;min-width:0}
+.wa-big{display:flex;align-items:center;gap:14px;background:var(--lilac);color:#fff;border-radius:18px;padding:16px 20px;text-decoration:none;margin-bottom:16px}
+.wa-big svg{width:36px;height:36px;flex:none;stroke:#fff;fill:none;stroke-width:1.8}
+.wa-big small{display:block;opacity:.85;font-size:14px}
+.wa-big b{font-size:24px;letter-spacing:.04em;direction:ltr;unicode-bidi:isolate}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:12px;background:var(--lilac-soft);min-width:0}
+.row .v{direction:ltr;unicode-bidi:isolate;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;min-width:0}
+.row .k{font-size:13px;color:var(--muted)}
+.copy{border:0;background:var(--surface);color:var(--lilac-deep);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700;flex:none}
+.side{display:flex;flex-direction:column;gap:14px}
+.qr{display:flex;gap:16px;align-items:center}
+.qr canvas,.qr .qrbox{width:132px;height:132px;flex:none;border-radius:12px;background:#fff;padding:8px;border:1px solid var(--lilac-line)}
+.qr .qrbox img{width:100%;height:100%;display:block;image-rendering:pixelated}
+.addr{display:flex;gap:10px;align-items:flex-start}
+.addr svg{width:24px;height:24px;stroke:var(--lilac-deep);fill:none;stroke-width:1.8;flex:none;margin-top:3px}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--lilac-line);padding-block:26px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
+footer bdi{direction:ltr}
+.admin-link{border:1px solid var(--lilac-line);background:var(--surface);border-radius:999px;padding:6px 14px;color:var(--lilac-deep);font-weight:700}
+
+/* floating whatsapp */
+.fab{position:fixed;inset-inline-end:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;width:58px;height:58px;border-radius:50%;background:var(--lilac);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -10px rgba(94,63,153,.8)}
+.fab svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.8}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(26,18,40,.6);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.mbox{background:var(--surface);border-radius:22px;max-width:920px;width:100%;max-height:100%;overflow:auto;display:grid;grid-template-columns:1.3fr 1fr}
+.mbox img{width:100%;height:100%;object-fit:cover;display:block;min-height:280px;max-height:80vh}
+.mbox .mi{padding:24px;display:flex;flex-direction:column;gap:10px}
+.mbox h3{font-size:28px;margin:0}
+.xbtn{align-self:flex-end;border:0;background:var(--lilac-soft);color:var(--lilac-deep);width:38px;height:38px;border-radius:50%;font-size:20px;line-height:1}
+@media (max-width:760px){.mbox{grid-template-columns:1fr}.mbox img{max-height:50vh}}
+
+/* admin */
+.drawer{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(560px,100%);z-index:70;background:var(--surface);box-shadow:-20px 0 50px -20px rgba(40,20,80,.4);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.dh{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--lilac-line)}
+.dh b{font-family:var(--f-display);font-size:20px;color:var(--lilac-deep);margin-inline-end:auto}
+.tabs{display:flex;gap:6px;padding:10px 18px;border-bottom:1px solid var(--lilac-line);overflow-x:auto}
+.tabs button{flex:none;border:0;background:transparent;border-radius:999px;padding:7px 14px;font-weight:700;color:var(--muted)}
+.tabs button[aria-selected=true]{background:var(--lilac-soft);color:var(--lilac-deep)}
+.dbody{flex:1;overflow:auto;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.dfoot{border-top:1px solid var(--lilac-line);padding:12px 18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.dfoot .st{font-size:14px;color:var(--muted);margin-inline-end:auto}
+.dfoot .st.dirty{color:var(--gold);font-weight:700}
+.dfoot .st.err{color:var(--danger);font-weight:700}
+.fld{display:flex;flex-direction:column;gap:4px}
+.fld label{font-size:13px;font-weight:700;color:var(--muted)}
+.fld input,.fld textarea,.fld select{font:inherit;font-size:15px;border:1.5px solid var(--lilac-line);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);width:100%}
+.fld textarea{min-height:84px;resize:vertical}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--lilac);outline:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.two{grid-template-columns:1fr}}
+.pitem{border:1px solid var(--lilac-line);border-radius:14px;padding:12px;display:grid;grid-template-columns:96px 1fr;gap:12px}
+.pitem .th{width:96px;height:96px;border-radius:10px;object-fit:cover;background:var(--lilac-soft)}
+.pitem .acts{display:flex;flex-wrap:wrap;gap:6px;grid-column:1/-1}
+.mini{border:1px solid var(--lilac-line);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700;color:var(--lilac-deep)}
+.mini.del{color:var(--danger)}
+.mini.yes{background:var(--danger);color:#fff;border-color:var(--danger)}
+.note{background:var(--lilac-soft);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--lilac-deep)}
+.gitem{display:flex;gap:10px;align-items:center}
+.gitem img{width:90px;height:64px;object-fit:cover;border-radius:8px}
+.fileb{position:relative;overflow:hidden}
+.fileb input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.toast{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom,0px));inset-inline-start:50%;transform:translateX(-50%);z-index:80;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px}
+[dir=rtl] .toast{transform:translateX(50%)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<script type="application/json" id="site-data">{"v":1,"company":{"name_ar":"أناقة الرافدين للأثاث","name_en":"Anaqat Al-Rafidain Furniture","tagline_ar":"تجارة كافة أنواع الأثاث ومن مختلف المناشئ","tagline_en":"Trading in all kinds of furniture from a wide range of origins","hero_ar":"معرضك يستحق الأفخم","hero_en":"Your showroom deserves the finest","lead_ar":"شركة أناقة الرافدين للأثاث في الموصل: أثاث منزلي ومكتبي ومعدني وكهربائيات، بالجملة والمفرد، مع تجهيز دوائر الدولة.","lead_en":"Anaqat Al-Rafidain Furniture in Mosul: home, office and metal furniture plus electrical goods, wholesale and retail, and furnishing for government offices.","about_ar":"نعرض في معرضنا بالموصل تشكيلة واسعة من غرف النوم والأطقم والسفرة، والمكاتب التنفيذية والإدارية وطاولات الاجتماعات، والخزانات والقاصات المعدنية. نتعامل مع التجار وأصحاب المعارض بالجملة، ومع الزبائن بالمفرد، ونجهّز الدوائر الحكومية.","about_en":"Our Mosul showroom carries a wide range of bedrooms, sets and dining, executive and administrative desks, meeting tables, and metal cabinets and safes. We supply merchants and showroom owners wholesale, serve customers retail, and furnish government offices."},"contact":{"whatsapp":"07740885038","phones":["07740884351","07507552387","07703362524","07508255764"],"emails":["ainqaalrafdeen@gmail.com","ame9034@gmail.com"],"address_ar":"العراق · الموصل · الدركزلية","address_en":"Al-Darkazliya, Mosul, Iraq","facebook":"https://www.facebook.com/share/1CDgtLQi74/","map":"https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D8%AF%D8%B1%D9%83%D8%B2%D9%84%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%88%D8%B5%D9%84"},"media":{"logo":"img/logo.png","hero":"img/hero.jpg","video":"video/ad.mp4","gallery":["img/front.jpg","img/show1.jpg","img/front2.jpg","img/show2.jpg","img/jasmin_night.jpg"]},"cats":[{"id":"office","ar":"مكاتب تنفيذية","en":"Executive desks"},{"id":"admin","ar":"مكاتب إدارية","en":"Office desks"},{"id":"meeting","ar":"طاولات اجتماعات","en":"Meeting tables"},{"id":"bedroom","ar":"غرف نوم","en":"Bedrooms"},{"id":"youth","ar":"غرف شبابية","en":"Youth rooms"},{"id":"sets","ar":"تسريحات وأطقم","en":"Dressers & sets"},{"id":"dining","ar":"سفرة وطاولات","en":"Dining"},{"id":"metal","ar":"أثاث معدني","en":"Metal furniture"}],"products":[{"id":"p1","cat":"office","model":"","ar":"مكتب تنفيذي بإطارات ذهبية وجلد مبطّن","en":"Executive desk with gold trims and quilted leather","img":"img/exec_walnut.jpg"},{"id":"p2","cat":"office","model":"","ar":"مكتب تنفيذي كلاسيكي مع مكتبة","en":"Classic executive desk with bookcase","img":"img/exec_classic.jpg"},{"id":"p3","cat":"office","model":"","ar":"مكتب تنفيذي رمادي بزخرفة ذهبية","en":"Grey executive desk with gold emblem","img":"img/exec_dark.jpg"},{"id":"p4","cat":"admin","model":"16_214","ar":"مكتب إداري بزاوية","en":"L-shaped office desk","img":"img/d16214.jpg"},{"id":"p5","cat":"admin","model":"7212","ar":"مكتب إداري بأدراج","en":"Office desk with drawers","img":"img/d7212.jpg"},{"id":"p6","cat":"admin","model":"1517","ar":"مكتب إداري بخزانتين","en":"Office desk with two cabinets","img":"img/d1517.jpg"},{"id":"p7","cat":"admin","model":"x7316","ar":"مكتب إداري بزاوية وملحق","en":"L-shaped desk with side unit","img":"img/d7316.jpg"},{"id":"p8","cat":"meeting","model":"","ar":"طاولة اجتماعات بيضوية بقطع متعددة","en":"Modular oval meeting table","img":"img/meet_oval.jpg"},{"id":"p9","cat":"meeting","model":"","ar":"طاولة اجتماعات دائرية","en":"Round meeting table","img":"img/meet_round.jpg"},{"id":"p10","cat":"meeting","model":"","ar":"طاولة اجتماعات من المعرض","en":"Meeting table in our showroom","img":"img/meet_real.jpg"},{"id":"p11","cat":"bedroom","model":"JASMIN","ar":"غرفة نوم جاسمين","en":"Jasmin bedroom","img":"img/jasmin.jpg"},{"id":"p12","cat":"bedroom","model":"RODOS 9","ar":"غرفة نوم رودوس","en":"Rodos bedroom","img":"img/rodos.jpg"},{"id":"p13","cat":"bedroom","model":"İNCİ","ar":"غرفة نوم أينجي","en":"İnci bedroom","img":"img/inci.jpg"},{"id":"p14","cat":"bedroom","model":"BORJO · 7 قطع","ar":"غرفة نوم بورجو","en":"Borjo bedroom, 7 pieces","img":"img/borjo.jpg"},{"id":"p15","cat":"bedroom","model":"","ar":"غرفة نوم بلون كريمي","en":"Cream bedroom","img":"img/cream.jpg"},{"id":"p16","cat":"bedroom","model":"","ar":"غرفة نوم رمادية مع إضاءة","en":"Grey bedroom with lighting","img":"img/grey_bed.jpg"},{"id":"p17","cat":"youth","model":"CİHAN 400","ar":"غرفة شبابية جيهان 400","en":"Cihan 400 youth room","img":"img/cihan400.jpg"},{"id":"p18","cat":"youth","model":"CİHAN 300","ar":"غرفة شبابية جيهان 300","en":"Cihan 300 youth room","img":"img/cihan300.jpg"},{"id":"p19","cat":"sets","model":"","ar":"تسريحة بمرآة ذهبية مضيئة","en":"Dresser with lit gold mirror","img":"img/dresser_gold.jpg"},{"id":"p20","cat":"sets","model":"","ar":"طقم تسريحة وشفنير وميز تلفزيون","en":"Dresser, chest and TV unit set","img":"img/tv_set.jpg"},{"id":"p21","cat":"sets","model":"","ar":"تسريحة بيضاء بخطوط سوداء","en":"White dresser with black lines","img":"img/dresser_white.jpg"},{"id":"p22","cat":"dining","model":"","ar":"طاولة سفرة رخامية مع كراسي","en":"Marble dining table with chairs","img":"img/dining.jpg"},{"id":"p23","cat":"metal","model":"","ar":"خزانات ولوكرات معدنية","en":"Metal cabinets and lockers","img":"img/lockers.jpg"},{"id":"p24","cat":"metal","model":"","ar":"قاصة حديدية","en":"Steel safe","img":"img/safe.jpg"}]}</script>
+<div id="app"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script id="site-js">
+(function(){
+var SELF = document.currentScript.textContent;
+var CSS = document.getElementById('site-css').textContent;
+var skel = document.head.querySelector('style');
+var SKEL_CSS = (skel && /hidden/.test(skel.textContent)) ? skel.textContent :
+  ':root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}';
+var S = JSON.parse(document.getElementById('site-data').textContent);
+var lang = 'ar';
+try { var sl = localStorage.getItem('rf-lang'); if (sl === 'en' || sl === 'ar') lang = sl; } catch(e) {}
+if (location.hash === '#en') lang = 'en';
+var filter = 'all';
+var isAdmin = false, artifactNS = null, assetsNS = null, draft = null, dirty = false, tab = 'products';
+var app = document.getElementById('app');
+
+var T = {
+  ar: {nav:['الأقسام','المنتجات','من نحن','المعرض','تواصل'], lang:'English', wa:'واتساب', browse:'تصفّح المنتجات', loc:'موقعنا على الخريطة',
+    chips:['جملة','مفرد','تجهيز دوائر الدولة'], deptE:'أقسامنا', deptH:'كل ما يحتاجه معرضك في مكان واحد',
+    depts:[['منزلي','غرف نوم، أطقم، سفرة'],['مكتبي','مكاتب وطاولات اجتماعات'],['معدني','خزانات، لوكرات، قاصات'],['كهربائيات','أجهزة كهربائية منزلية']],
+    prodE:'المنتجات', prodH:'موديلات من معرضنا', prodP:'اضغط على أي قطعة لعرضها كبيرة وطلبها عبر واتساب.', all:'الكل', model:'موديل',
+    whyE:'للتجار وأصحاب المعارض', whyH:'لماذا أناقة الرافدين؟',
+    why:[['جملة ومفرد','نبيع للتجار بالجملة وللزبائن بالمفرد.'],['من مختلف المناشئ','تشكيلة واسعة من موديلات متعددة.'],['تجهيز دوائر الدولة','نجهّز المكاتب والقاعات الحكومية.'],['معرض واسع في الموصل','زورونا وشاهدوا القطع على الطبيعة.']],
+    aboutE:'من نحن', vidH:'شاهد إعلاننا', galE:'معرضنا', galH:'صور من المعرض', conE:'تواصل معنا', conH:'نسعد بخدمتكم',
+    waL:'راسلنا على واتساب', phones:'أرقام الهاتف', emails:'البريد الإلكتروني', fb:'صفحتنا على فيسبوك', fbScan:'امسح الرمز لزيارة صفحتنا، أو اضغط الزر.', fbBtn:'افتح فيسبوك',
+    copy:'نسخ', copied:'تم النسخ', order:'اطلب عبر واتساب', ask:'مرحباً، أستفسر عن', rights:'جميع الحقوق محفوظة', credit:'تصميم وتطوير: Logical Code | لوجيكال كود', admin:'لوحة الإدارة', close:'إغلاق', menu:'القائمة'},
+  en: {nav:['Departments','Products','About','Showroom','Contact'], lang:'العربية', wa:'WhatsApp', browse:'Browse products', loc:'Find us on the map',
+    chips:['Wholesale','Retail','Government office furnishing'], deptE:'Departments', deptH:'Everything your showroom needs in one place',
+    depts:[['Home','Bedrooms, sets, dining'],['Office','Desks and meeting tables'],['Metal','Cabinets, lockers, safes'],['Electrical','Home electrical goods']],
+    prodE:'Products', prodH:'Models from our showroom', prodP:'Tap any piece to view it large and order on WhatsApp.', all:'All', model:'Model',
+    whyE:'For merchants and showroom owners', whyH:'Why Anaqat Al-Rafidain?',
+    why:[['Wholesale & retail','We supply merchants wholesale and customers retail.'],['Many origins','A wide range of models to choose from.'],['Government furnishing','We furnish government offices and halls.'],['Large Mosul showroom','Visit us and see every piece in person.']],
+    aboutE:'About us', vidH:'Watch our ad', galE:'Our showroom', galH:'Inside the showroom', conE:'Contact us', conH:'We are happy to help',
+    waL:'Message us on WhatsApp', phones:'Phone numbers', emails:'Email', fb:'Our Facebook page', fbScan:'Scan the code to visit our page, or tap the button.', fbBtn:'Open Facebook',
+    copy:'Copy', copied:'Copied', order:'Order on WhatsApp', ask:'Hello, I would like to ask about', rights:'All rights reserved', credit:'Design & development: Logical Code', admin:'Admin panel', close:'Close', menu:'Menu'}
+};
+var A = {
+  ar:{title:'لوحة الإدارة',tabs:{products:'المنتجات',texts:'النصوص',contact:'التواصل والموقع',media:'الصور والفيديو',cats:'الفئات'},
+    save:'نشر التغييرات',saving:'جارٍ النشر…',saved:'لا توجد تغييرات غير منشورة',dirty:'تغييرات غير منشورة',
+    add:'إضافة منتج',img:'تغيير الصورة',up:'أعلى',down:'أسفل',del:'حذف',sure:'تأكيد الحذف',cancel:'إلغاء',
+    cat:'الفئة',model:'رقم الموديل',nar:'الاسم بالعربية',nen:'الاسم بالإنجليزية',uploading:'جارٍ رفع الصورة…',
+    upfail:'تعذّر رفع الملف. جرّب صورة أصغر أو بصيغة JPG.',noup:'رفع الصور متاح لأصحاب صلاحية التحرير فقط.',
+    readonly:'هذا العرض للقراءة فقط، فلا يمكن النشر منه.',conflict:'نُشرت نسخة أحدث قبلك، وستُحدَّث الصفحة الآن. مسودتك محفوظة وستُستعاد.',
+    failed:'تعذّر النشر. حاول مرة أخرى بعد قليل.',restore:'استُعيدت مسودتك غير المنشورة.',
+    hint:'التعديلات تظهر لك مباشرة، ولا تصل للزوار إلا بعد الضغط على «نشر التغييرات».',
+    lines:'سطر لكل رقم',lines2:'سطر لكل بريد',hero:'صورة الواجهة',logo:'الشعار',video:'فيديو الإعلان',gal:'صور المعرض',addg:'إضافة صورة',remove:'إزالة',newcat:'إضافة فئة',
+    catNote:'حذف فئة لا يحذف منتجاتها؛ انقلها إلى فئة أخرى أولاً.', mapNote:'افتح موقع المعرض في خرائط Google، ثم اضغط «مشاركة» وانسخ الرابط والصقه هنا.'},
+  en:{title:'Admin panel',tabs:{products:'Products',texts:'Texts',contact:'Contact & map',media:'Images & video',cats:'Categories'},
+    save:'Publish changes',saving:'Publishing…',saved:'No unpublished changes',dirty:'Unpublished changes',
+    add:'Add product',img:'Change image',up:'Up',down:'Down',del:'Delete',sure:'Confirm delete',cancel:'Cancel',
+    cat:'Category',model:'Model number',nar:'Arabic name',nen:'English name',uploading:'Uploading image…',
+    upfail:'Upload failed. Try a smaller image or a JPG.',noup:'Uploading is available to editors only.',
+    readonly:'This view is read-only, so publishing is not possible here.',conflict:'A newer version was published first; the page will reload now. Your draft is saved and will be restored.',
+    failed:'Publishing failed. Try again shortly.',restore:'Your unpublished draft was restored.',
+    hint:'You see edits immediately; visitors see them only after you press "Publish changes".',
+    lines:'One number per line',lines2:'One email per line',hero:'Hero image',logo:'Logo',video:'Ad video',gal:'Showroom photos',addg:'Add photo',remove:'Remove',newcat:'Add category',
+    catNote:'Deleting a category keeps its products; move them first.', mapNote:'Open the showroom in Google Maps, tap Share, copy the link and paste it here.'}
+};
+
+var ICON = {
+  wa:'<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.6 8.2c.3-.6 1-.6 1.3 0l.8 1.7c.2.3 0 .7-.2.9l-.5.4c.6 1.4 1.8 2.5 3.2 3.2l.4-.5c.2-.3.6-.4.9-.2l1.7.8c.6.3.6 1 0 1.3-.8.5-1.7.6-2.6.3-2.4-1-4.3-2.9-5.3-5.3-.3-.9-.2-1.9.3-2.6z"/></svg>',
+  pin:'<svg viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  menu:'<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+  home:'<svg viewBox="0 0 64 64"><path d="M10 34v-8a6 6 0 0 1 12 0v6h20v-6a6 6 0 0 1 12 0v8"/><path d="M8 34h48v12H8z"/><path d="M12 46v6M52 46v6"/><path d="M22 32v-8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8"/></svg>',
+  office:'<svg viewBox="0 0 64 64"><path d="M6 26h52"/><path d="M10 26v26M54 26v26"/><path d="M38 26v20h16"/><path d="M38 36h16"/><path d="M20 14h16v8H20z"/><path d="M28 22v4"/></svg>',
+  metal:'<svg viewBox="0 0 64 64"><rect x="14" y="8" width="36" height="48" rx="2"/><path d="M32 8v48M14 24h36M14 40h36"/><path d="M27 15v3M37 15v3M27 31v3M37 31v3M27 47v3M37 47v3"/></svg>',
+  elec:'<svg viewBox="0 0 64 64"><path d="M35 6 16 36h14l-3 22 21-32H34z"/></svg>'
+};
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function L(o,k){return o[k+'_'+lang] || o[k+'_ar'] || '';}
+function nm(o){return o[lang] || o.ar || '';}
+function D(){return draft || S;}
+function waNum(n){n=String(n).replace(/\D/g,''); if(n.charAt(0)==='0') n='964'+n.slice(1); return n;}
+function waLink(text){var d=D(); return 'https://wa.me/'+waNum(d.contact.whatsapp)+(text?'?text='+encodeURIComponent(text):'');}
+function fmtPhone(p){p=String(p).replace(/\D/g,''); return p.length===11 ? p.slice(0,4)+' '+p.slice(4,7)+' '+p.slice(7) : p;}
+function catName(id){var c=D().cats.filter(function(x){return x.id===id;})[0]; return c?nm(c):'';}
+function uid(){return 'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,5);}
+
+function render(){
+  var d=D(), t=T[lang];
+  document.documentElement.lang=lang; document.documentElement.dir = lang==='ar'?'rtl':'ltr';
+  document.title = L(d.company,'name');
+  var cats=d.cats.filter(function(c){return d.products.some(function(p){return p.cat===c.id;});});
+  var prods=d.products.filter(function(p){return filter==='all'||p.cat===filter;});
+  var h='';
+  h+='<header class="hdr"><div class="wrap">'+
+    '<a class="brand" href="#top"><img src="'+esc(d.media.logo)+'" alt=""><span><b>'+esc(L(d.company,'name'))+'</b><small>'+esc(t.chips.slice(0,2).join(' · '))+'</small></span></a>'+
+    '<nav class="nav" id="nav">'+['depts','products','about','gallery','contact'].map(function(id,i){return '<a href="#'+id+'">'+t.nav[i]+'</a>';}).join('')+'</nav>'+
+    '<div class="hbtns"><a class="btn btn-p btn-sm btn-wa" href="'+esc(waLink())+'" target="_blank" rel="noopener">'+ICON.wa+t.wa+'</a>'+
+    '<button class="lang" id="langBtn" type="button">'+t.lang+'</button>'+
+    '<button class="menu-btn" id="menuBtn" type="button" aria-label="'+t.menu+'">'+ICON.menu+'</button></div></div></header>';
+  h+='<main id="top">';
+  h+='<div class="hero"><div class="wrap hero-grid"><div>'+
+    '<div class="chips">'+t.chips.map(function(c){return '<span class="chip">'+c+'</span>';}).join('')+'</div>'+
+    '<h1 class="disp">'+esc(L(d.company,'hero'))+'</h1>'+
+    '<p class="lead">'+esc(L(d.company,'lead'))+'</p>'+
+    '<div class="cta"><a class="btn btn-p" href="'+esc(waLink())+'" target="_blank" rel="noopener">'+ICON.wa+t.wa+'</a>'+
+    '<a class="btn btn-o" href="#products">'+t.browse+'</a>'+
+    '<a class="btn btn-o" href="'+esc(d.contact.map)+'" target="_blank" rel="noopener">'+ICON.pin+t.loc+'</a></div></div>'+
+    '<div class="hero-img"><img src="'+esc(d.media.hero)+'" alt=""><div class="tag"><img src="'+esc(d.media.logo)+'" alt=""><div><b>'+esc(L(d.company,'name'))+'</b><span>'+esc(L(d.company,'tagline'))+'</span></div></div></div>'+
+    '</div></div>';
+  h+='<section id="depts" class="band"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">'+t.deptE+'</div><h2 class="disp">'+t.deptH+'</h2></div><p>'+esc(L(d.company,'tagline'))+'</p></div><div class="depts">'+
+    [['home','bedroom'],['office','office'],['metal','metal'],['elec','']].map(function(x,i){
+      return '<a class="dept" href="#'+(x[1]?'products':'contact')+'" data-goto="'+x[1]+'">'+ICON[x[0]]+'<b>'+t.depts[i][0]+'</b><span>'+t.depts[i][1]+'</span></a>';}).join('')+'</div></div></section>';
+  h+='<section id="products"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">'+t.prodE+'</div><h2 class="disp">'+t.prodH+'</h2></div><p>'+t.prodP+'</p></div>'+
+    '<div class="filters" role="toolbar"><button type="button" data-f="all" aria-pressed="'+(filter==='all')+'">'+t.all+' ('+d.products.length+')</button>'+
+    cats.map(function(c){var n=d.products.filter(function(p){return p.cat===c.id;}).length; return '<button type="button" data-f="'+esc(c.id)+'" aria-pressed="'+(filter===c.id)+'">'+esc(nm(c))+' ('+n+')</button>';}).join('')+'</div>';
+  h+= prods.length ? '<div class="grid">'+prods.map(function(p){
+      return '<button type="button" class="card" data-p="'+esc(p.id)+'"><div class="ph"><img loading="lazy" src="'+esc(p.img)+'" alt="'+esc(nm(p))+'"></div><div class="bd"><span class="cat">'+esc(catName(p.cat))+'</span><span class="nm">'+esc(nm(p))+'</span>'+(p.model?'<span class="md">'+t.model+' <bdi>'+esc(p.model)+'</bdi></span>':'')+'</div></button>';
+    }).join('')+'</div>' : '<div class="empty">—</div>';
+  h+='</div></section>';
+  h+='<section class="band"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">'+t.whyE+'</div><h2 class="disp">'+t.whyH+'</h2></div></div><div class="why">'+
+    t.why.map(function(w){return '<div><b>'+w[0]+'</b><p>'+w[1]+'</p></div>';}).join('')+'</div></div></section>';
+  h+='<section id="about"><div class="wrap about"><div><div class="eyebrow">'+t.aboutE+'</div><h2 class="disp" style="font-size:clamp(26px,3.4vw,40px);margin:4px 0 10px">'+esc(L(d.company,'name'))+'</h2><p>'+esc(L(d.company,'about'))+'</p>'+
+    '<div class="cta"><a class="btn btn-p" href="'+esc(waLink())+'" target="_blank" rel="noopener">'+ICON.wa+t.wa+'</a><a class="btn btn-o" href="'+esc(d.contact.map)+'" target="_blank" rel="noopener">'+ICON.pin+t.loc+'</a></div></div>'+
+    (d.media.video?'<div><div class="eyebrow" style="margin-bottom:8px">'+t.vidH+'</div><div class="vid"><video controls preload="metadata" playsinline poster="'+esc(d.media.hero)+'" src="'+esc(d.media.video)+'"></video></div></div>':'')+
+    '</div></section>';
+  if(d.media.gallery.length){
+    h+='<section id="gallery" class="band"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">'+t.galE+'</div><h2 class="disp">'+t.galH+'</h2></div><p>'+esc(L(d.contact,'address'))+'</p></div><div class="gal">'+
+      d.media.gallery.slice(0,5).map(function(g,i){return '<button type="button" data-g="'+i+'"><img loading="lazy" src="'+esc(g)+'" alt=""></button>';}).join('')+'</div></div></section>';
+  }
+  h+='<section id="contact"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">'+t.conE+'</div><h2 class="disp">'+t.conH+'</h2></div></div><div class="contact">'+
+    '<div class="cbox"><a class="wa-big" href="'+esc(waLink())+'" target="_blank" rel="noopener">'+ICON.wa+'<div><small>'+t.waL+'</small><b>'+esc(fmtPhone(d.contact.whatsapp))+'</b></div></a>'+
+    '<div class="rows"><div class="k" style="font-size:13px;color:var(--muted);font-weight:700">'+t.phones+'</div>'+
+    d.contact.phones.map(function(p){return '<div class="row"><span class="v">'+esc(fmtPhone(p))+'</span><button type="button" class="copy" data-copy="'+esc(p)+'">'+t.copy+'</button></div>';}).join('')+
+    '<div class="k" style="font-size:13px;color:var(--muted);font-weight:700;margin-top:6px">'+t.emails+'</div>'+
+    d.contact.emails.map(function(p){return '<div class="row"><span class="v">'+esc(p)+'</span><button type="button" class="copy" data-copy="'+esc(p)+'">'+t.copy+'</button></div>';}).join('')+
+    '</div></div>'+
+    '<div class="side"><div class="cbox"><div class="addr">'+ICON.pin+'<div><b style="font-size:18px">'+esc(L(d.contact,'address'))+'</b><div style="margin-top:10px"><a class="btn btn-p btn-sm" href="'+esc(d.contact.map)+'" target="_blank" rel="noopener">'+ICON.pin+t.loc+'</a></div></div></div></div>'+
+    (d.contact.facebook?'<div class="cbox"><b style="display:block;margin-bottom:10px;font-size:18px">'+t.fb+'</b><div class="qr"><div class="qrbox" id="qr"></div><div><p style="margin:0 0 10px;color:var(--muted);font-size:15px">'+t.fbScan+'</p><a class="btn btn-o btn-sm" href="'+esc(d.contact.facebook)+'" target="_blank" rel="noopener">'+t.fbBtn+'</a></div></div></div>':'')+
+    '</div></div></div></section>';
+  h+='</main><footer><div class="wrap"><span>© '+new Date().getFullYear()+' '+esc(L(d.company,'name'))+' · '+t.rights+'</span><span>'+t.credit+' · <bdi>0776 499 4170</bdi></span>'+
+    (isAdmin?'<button type="button" class="admin-link" id="adminBtn">'+t.admin+'</button>':'')+'</div></footer>';
+  h+='<a class="fab" href="'+esc(waLink())+'" target="_blank" rel="noopener" aria-label="'+t.wa+'">'+ICON.wa+'</a>';
+  h+='<div id="modalHost"></div><div id="drawerHost"></div><div id="toastHost"></div>';
+  var y=window.scrollY;
+  app.innerHTML=h;
+  window.scrollTo(0,y);
+  drawQR();
+  if(drawerOpen) renderDrawer();
+}
+
+function drawQR(){
+  var el=document.getElementById('qr'); if(!el) return;
+  if(typeof qrcode!=='function'){ el.style.display='none'; return; }
+  try{ var q=qrcode(0,'M'); q.addData(D().contact.facebook); q.make(); el.innerHTML='<img alt="QR" src="'+q.createDataURL(8,0)+'">'; }catch(e){ el.innerHTML=''; }
+}
+
+function toast(msg){
+  var h=document.getElementById('toastHost'); if(!h) return;
+  h.innerHTML='<div class="toast" role="status">'+esc(msg)+'</div>';
+  clearTimeout(toast._t); toast._t=setTimeout(function(){ if(h) h.innerHTML=''; },2600);
+}
+
+function openProduct(id){
+  var p=D().products.filter(function(x){return x.id===id;})[0]; if(!p) return;
+  var t=T[lang], msg=t.ask+' '+nm(p)+(p.model?' ('+t.model+' '+p.model+')':'');
+  document.getElementById('modalHost').innerHTML='<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="mbox"><img src="'+esc(p.img)+'" alt="'+esc(nm(p))+'"><div class="mi">'+
+    '<button type="button" class="xbtn" data-close aria-label="'+t.close+'">×</button><span class="cat" style="color:var(--lilac);font-weight:800;font-size:13px">'+esc(catName(p.cat))+'</span>'+
+    '<h3 class="disp">'+esc(nm(p))+'</h3>'+(p.model?'<div style="color:var(--muted)">'+t.model+' <bdi style="font-weight:800;color:var(--ink)">'+esc(p.model)+'</bdi></div>':'')+
+    '<p style="color:var(--muted);margin:6px 0">'+esc(L(D().company,'tagline'))+'</p>'+
+    '<a class="btn btn-p" href="'+esc(waLink(msg))+'" target="_blank" rel="noopener">'+ICON.wa+t.order+'</a>'+
+    '<div class="row"><span class="v">'+esc(fmtPhone(D().contact.whatsapp))+'</span><button type="button" class="copy" data-copy="'+esc(D().contact.whatsapp)+'">'+t.copy+'</button></div></div></div></div>';
+}
+function openImage(src){
+  document.getElementById('modalHost').innerHTML='<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="mbox" style="grid-template-columns:1fr;max-width:1100px;position:relative"><img src="'+esc(src)+'" alt="" style="max-height:85vh;object-fit:contain;background:#111"><button type="button" class="xbtn" data-close style="position:absolute;top:12px;inset-inline-end:12px">×</button></div></div>';
+}
+
+function copyText(v,btn){
+  var done=function(){ if(btn){var o=btn.textContent; btn.textContent=T[lang].copied; setTimeout(function(){btn.textContent=o;},1500);} };
+  try{ navigator.clipboard.writeText(v).then(done,function(){ toast(v); }); }catch(e){ toast(v); }
+}
+
+app.addEventListener('click',function(e){
+  var el=e.target.closest('button,a'); if(!el) return;
+  if(el.id==='langBtn'){ lang= lang==='ar'?'en':'ar'; try{localStorage.setItem('rf-lang',lang);}catch(x){} render(); return; }
+  if(el.id==='menuBtn'){ document.getElementById('nav').classList.toggle('open'); return; }
+  if(el.closest('#nav')){ document.getElementById('nav').classList.remove('open'); }
+  if(el.dataset.f){ filter=el.dataset.f; render(); return; }
+  if(el.dataset.goto){ filter=el.dataset.goto; render(); setTimeout(function(){var s=document.getElementById('products'); if(s) s.scrollIntoView();},0); e.preventDefault(); return; }
+  if(el.dataset.p && el.classList.contains('card')){ openProduct(el.dataset.p); return; }
+  if(el.dataset.g!=null && el.closest('.gal')){ openImage(D().media.gallery[+el.dataset.g]); return; }
+  if(el.dataset.copy){ copyText(el.dataset.copy,el); return; }
+  if(el.hasAttribute('data-close')){ document.getElementById('modalHost').innerHTML=''; return; }
+  if(el.id==='adminBtn'){ openDrawer(); return; }
+});
+app.addEventListener('click',function(e){ if(e.target.id==='modal') document.getElementById('modalHost').innerHTML=''; });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ var m=document.getElementById('modalHost'); if(m) m.innerHTML=''; } });
+
+/* ---------------- admin ---------------- */
+var drawerOpen=false, pendingDel=null, status='';
+function clone(o){return JSON.parse(JSON.stringify(o));}
+function markDirty(){ dirty=true; status=''; try{sessionStorage.setItem('rf-draft',JSON.stringify(draft));}catch(e){} }
+function openDrawer(){ if(!draft) draft=clone(S); drawerOpen=true; render(); }
+function closeDrawer(){ drawerOpen=false; document.getElementById('drawerHost').innerHTML=''; }
+
+function fld(label,path,val,type){
+  var id='f_'+path.replace(/[^a-z0-9]/gi,'_');
+  if(type==='area') return '<div class="fld"><label for="'+id+'">'+label+'</label><textarea id="'+id+'" data-path="'+path+'">'+esc(val)+'</textarea></div>';
+  return '<div class="fld"><label for="'+id+'">'+label+'</label><input id="'+id+'" data-path="'+path+'" value="'+esc(val)+'"'+(type==='ltr'?' dir="ltr"':'')+'></div>';
+}
+
+function renderDrawer(){
+  var a=A[lang], d=draft, h='';
+  h+='<aside class="drawer" role="dialog" aria-label="'+a.title+'"><div class="dh"><b>'+a.title+'</b><button type="button" class="xbtn" data-act="close" aria-label="'+T[lang].close+'">×</button></div>';
+  h+='<div class="tabs" role="tablist">'+Object.keys(a.tabs).map(function(k){return '<button type="button" role="tab" data-tab="'+k+'" aria-selected="'+(tab===k)+'">'+a.tabs[k]+'</button>';}).join('')+'</div><div class="dbody">';
+  h+='<div class="note">'+a.hint+'</div>';
+  if(tab==='products'){
+    h+='<button type="button" class="btn btn-p btn-sm" data-act="addp" style="align-self:flex-start">+ '+a.add+'</button>';
+    d.products.forEach(function(p,i){
+      h+='<div class="pitem"><img class="th" src="'+esc(p.img)+'" alt=""><div style="display:flex;flex-direction:column;gap:8px;min-width:0">'+
+        '<div class="two"><div class="fld"><label for="c_'+p.id+'">'+a.cat+'</label><select id="c_'+p.id+'" data-pp="'+i+'" data-k="cat">'+d.cats.map(function(c){return '<option value="'+esc(c.id)+'"'+(c.id===p.cat?' selected':'')+'>'+esc(nm(c))+'</option>';}).join('')+'</select></div>'+
+        '<div class="fld"><label for="m_'+p.id+'">'+a.model+'</label><input id="m_'+p.id+'" dir="ltr" data-pp="'+i+'" data-k="model" value="'+esc(p.model)+'"></div></div>'+
+        '<div class="two"><div class="fld"><label for="a_'+p.id+'">'+a.nar+'</label><input id="a_'+p.id+'" dir="rtl" data-pp="'+i+'" data-k="ar" value="'+esc(p.ar)+'"></div>'+
+        '<div class="fld"><label for="e_'+p.id+'">'+a.nen+'</label><input id="e_'+p.id+'" dir="ltr" data-pp="'+i+'" data-k="en" value="'+esc(p.en)+'"></div></div></div>'+
+        '<div class="acts"><span class="mini fileb">'+a.img+'<input type="file" accept="image/*" data-upimg="p:'+i+'" aria-label="'+a.img+'"></span>'+
+        '<button type="button" class="mini" data-act="up" data-i="'+i+'"'+(i===0?' disabled':'')+'>'+a.up+'</button><button type="button" class="mini" data-act="down" data-i="'+i+'"'+(i===d.products.length-1?' disabled':'')+'>'+a.down+'</button>'+
+        (pendingDel===p.id?'<button type="button" class="mini yes" data-act="delyes" data-i="'+i+'">'+a.sure+'</button><button type="button" class="mini" data-act="delno">'+a.cancel+'</button>':'<button type="button" class="mini del" data-act="del" data-id="'+p.id+'">'+a.del+'</button>')+
+        '</div></div>';
+    });
+  } else if(tab==='texts'){
+    var c=d.company;
+    h+='<div class="two">'+fld('اسم الشركة (عربي)','company.name_ar',c.name_ar)+fld('Company name (English)','company.name_en',c.name_en,'ltr')+'</div>';
+    h+='<div class="two">'+fld('العنوان الرئيسي (عربي)','company.hero_ar',c.hero_ar)+fld('Hero headline (English)','company.hero_en',c.hero_en,'ltr')+'</div>';
+    h+=fld('الشعار النصي (عربي)','company.tagline_ar',c.tagline_ar)+fld('Tagline (English)','company.tagline_en',c.tagline_en,'ltr');
+    h+=fld('المقدمة (عربي)','company.lead_ar',c.lead_ar,'area')+fld('Intro (English)','company.lead_en',c.lead_en,'area');
+    h+=fld('من نحن (عربي)','company.about_ar',c.about_ar,'area')+fld('About (English)','company.about_en',c.about_en,'area');
+  } else if(tab==='contact'){
+    var k=d.contact;
+    h+=fld('WhatsApp','contact.whatsapp',k.whatsapp,'ltr');
+    h+='<div class="fld"><label for="f_phones">'+T[lang].phones+' — '+a.lines+'</label><textarea id="f_phones" dir="ltr" data-list="contact.phones">'+esc(k.phones.join('\n'))+'</textarea></div>';
+    h+='<div class="fld"><label for="f_emails">'+T[lang].emails+' — '+a.lines2+'</label><textarea id="f_emails" dir="ltr" data-list="contact.emails">'+esc(k.emails.join('\n'))+'</textarea></div>';
+    h+='<div class="two">'+fld('العنوان (عربي)','contact.address_ar',k.address_ar)+fld('Address (English)','contact.address_en',k.address_en,'ltr')+'</div>';
+    h+=fld(T[lang].loc+' (Google Maps)','contact.map',k.map,'ltr')+'<div class="note">'+a.mapNote+'</div>';
+    h+=fld('Facebook','contact.facebook',k.facebook,'ltr');
+  } else if(tab==='media'){
+    var m=d.media;
+    h+='<div class="gitem"><img src="'+esc(m.hero)+'" alt=""><b style="margin-inline-end:auto">'+a.hero+'</b><span class="mini fileb">'+a.img+'<input type="file" accept="image/*" data-upimg="hero" aria-label="'+a.hero+'"></span></div>';
+    h+='<div class="gitem"><img src="'+esc(m.logo)+'" alt="" style="object-fit:contain;background:var(--lilac-soft)"><b style="margin-inline-end:auto">'+a.logo+'</b><span class="mini fileb">'+a.img+'<input type="file" accept="image/*" data-upimg="logo" aria-label="'+a.logo+'"></span></div>';
+    h+='<div class="gitem"><b style="margin-inline-end:auto">'+a.video+'</b><span class="mini fileb">'+a.img+'<input type="file" accept="video/mp4,video/webm" data-upimg="video" aria-label="'+a.video+'"></span></div>';
+    h+='<b>'+a.gal+'</b>';
+    m.gallery.forEach(function(g,i){ h+='<div class="gitem"><img src="'+esc(g)+'" alt=""><span style="margin-inline-end:auto"></span><button type="button" class="mini del" data-act="gdel" data-i="'+i+'">'+a.remove+'</button></div>'; });
+    h+='<span class="mini fileb" style="align-self:flex-start">+ '+a.addg+'<input type="file" accept="image/*" data-upimg="gal" aria-label="'+a.addg+'"></span>';
+  } else if(tab==='cats'){
+    h+='<div class="note">'+a.catNote+'</div>';
+    d.cats.forEach(function(c,i){ h+='<div class="two" style="align-items:end">'+
+      '<div class="fld"><label for="ca_'+i+'">عربي</label><input id="ca_'+i+'" dir="rtl" data-cat="'+i+'" data-k="ar" value="'+esc(c.ar)+'"></div>'+
+      '<div class="fld"><label for="ce_'+i+'">English</label><input id="ce_'+i+'" dir="ltr" data-cat="'+i+'" data-k="en" value="'+esc(c.en)+'"></div></div>'+
+      (d.products.some(function(p){return p.cat===c.id;})?'':'<button type="button" class="mini del" style="align-self:flex-start" data-act="cdel" data-i="'+i+'">'+a.del+'</button>'); });
+    h+='<button type="button" class="mini" style="align-self:flex-start" data-act="cadd">+ '+a.newcat+'</button>';
+  }
+  h+='</div><div class="dfoot"><span class="st'+(status==='err'?' err':(dirty?' dirty':''))+'" id="stat">'+(status&&status!=='err'?status:(status==='err'?statusMsg:(dirty?a.dirty:a.saved)))+'</span>'+
+    '<button type="button" class="btn btn-p btn-sm" data-act="publish"'+(dirty?'':' disabled')+'>'+a.save+'</button></div></aside>';
+  document.getElementById('drawerHost').innerHTML=h;
+}
+var statusMsg='';
+function setByPath(obj,path,val){ var ks=path.split('.'), o=obj; for(var i=0;i<ks.length-1;i++) o=o[ks[i]]; o[ks[ks.length-1]]=val; }
+
+document.addEventListener('input',function(e){
+  if(!drawerOpen||!draft) return;
+  var el=e.target;
+  if(el.dataset.path){ setByPath(draft,el.dataset.path,el.value); }
+  else if(el.dataset.list){ setByPath(draft,el.dataset.list,el.value.split('\n').map(function(s){return s.trim();}).filter(Boolean)); }
+  else if(el.dataset.pp!=null){ draft.products[+el.dataset.pp][el.dataset.k]=el.value; }
+  else if(el.dataset.cat!=null){ draft.cats[+el.dataset.cat][el.dataset.k]=el.value; }
+  else return;
+  markDirty(); softRefresh();
+});
+document.addEventListener('change',function(e){
+  var el=e.target;
+  if(el.tagName==='SELECT' && el.dataset.pp!=null){ draft.products[+el.dataset.pp].cat=el.value; markDirty(); softRefresh(); }
+  if(el.type==='file' && el.dataset.upimg){ handleUpload(el); }
+});
+var softT=null;
+function softRefresh(){
+  var st=document.getElementById('stat'); if(st){ st.textContent=A[lang].dirty; st.className='st dirty'; }
+  var pb=document.querySelector('[data-act=publish]'); if(pb) pb.disabled=false;
+  clearTimeout(softT); softT=setTimeout(function(){ var a=document.activeElement, id=a&&a.id, s=a&&a.selectionStart; render(); if(id){var n=document.getElementById(id); if(n){n.focus(); try{if(s!=null) n.setSelectionRange(s,s);}catch(x){}}} },700);
+}
+
+function downscale(file){
+  return new Promise(function(res){
+    if(!/^image\/(jpeg|png|webp)/.test(file.type)) return res(file);
+    var img=new Image(), url=URL.createObjectURL(file);
+    img.onload=function(){ var m=1600, w=img.naturalWidth, h=img.naturalHeight, s=Math.min(1,m/Math.max(w,h));
+      var c=document.createElement('canvas'); c.width=Math.round(w*s); c.height=Math.round(h*s);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url);
+      c.toBlob(function(b){ res(b||file); }, file.type==='image/png'?'image/png':'image/jpeg', .86); };
+    img.onerror=function(){ res(file); }; img.src=url;
+  });
+}
+function handleUpload(input){
+  var f=input.files&&input.files[0]; if(!f) return;
+  var a=A[lang], target=input.dataset.upimg;
+  if(!assetsNS){ toast(a.noup); return; }
+  toast(a.uploading);
+  downscale(f).then(function(b){ return assetsNS.upload(b); }).then(function(r){
+    var url=r.url;
+    if(target==='hero') draft.media.hero=url;
+    else if(target==='logo') draft.media.logo=url;
+    else if(target==='video') draft.media.video=url;
+    else if(target==='gal') draft.media.gallery.push(url);
+    else if(target.indexOf('p:')===0) draft.products[+target.slice(2)].img=url;
+    markDirty(); render();
+  }).catch(function(){ toast(a.upfail); });
+}
+
+app.addEventListener('click',function(e){
+  var el=e.target.closest('[data-act],[data-tab]'); if(!el||!drawerOpen) return;
+  var act=el.dataset.act, i=+el.dataset.i, d=draft;
+  if(el.dataset.tab){ tab=el.dataset.tab; pendingDel=null; renderDrawer(); return; }
+  if(act==='close'){ closeDrawer(); return; }
+  if(act==='addp'){ d.products.unshift({id:uid(),cat:(filter!=='all'?filter:d.cats[0].id),model:'',ar:'منتج جديد',en:'New product',img:d.media.hero}); markDirty(); render(); return; }
+  if(act==='up'&&i>0){ var x=d.products.splice(i,1)[0]; d.products.splice(i-1,0,x); markDirty(); render(); return; }
+  if(act==='down'&&i<d.products.length-1){ var y=d.products.splice(i,1)[0]; d.products.splice(i+1,0,y); markDirty(); render(); return; }
+  if(act==='del'){ pendingDel=el.dataset.id; renderDrawer(); return; }
+  if(act==='delno'){ pendingDel=null; renderDrawer(); return; }
+  if(act==='delyes'){ d.products.splice(i,1); pendingDel=null; markDirty(); render(); return; }
+  if(act==='gdel'){ d.media.gallery.splice(i,1); markDirty(); render(); return; }
+  if(act==='cadd'){ d.cats.push({id:'c'+Date.now().toString(36),ar:'فئة جديدة',en:'New category'}); markDirty(); render(); return; }
+  if(act==='cdel'){ d.cats.splice(i,1); markDirty(); render(); return; }
+  if(act==='publish'){ doPublish(el); return; }
+});
+
+function buildDoc(state){
+  var json=JSON.stringify(state).replace(/</g,'\\u003c');
+  var head='<title>'+esc(state.company.name_ar)+'</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'+
+    '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;800&family=Marcellus&display=swap">\n';
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+SKEL_CSS+'</style></head><body>'+
+    head+'<style id="site-css">'+CSS+'</style>\n<script type="application/json" id="site-data">'+json+'<\/script>\n<div id="app"></div>\n'+
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"><\/script>\n<script id="site-js">'+SELF+'<\/script></body></html>';
+}
+function doPublish(btn){
+  var a=A[lang];
+  if(!artifactNS){ status='err'; statusMsg=a.readonly; renderDrawer(); return; }
+  btn.disabled=true; var st=document.getElementById('stat'); if(st){ st.textContent=a.saving; st.className='st'; }
+  try{sessionStorage.setItem('rf-draft',JSON.stringify(draft));}catch(e){}
+  try{sessionStorage.setItem('rf-admin-open','1');}catch(e){}
+  artifactNS.publish(buildDoc(draft)).then(function(){
+    try{sessionStorage.removeItem('rf-draft');}catch(e){}
+  }).catch(function(err){
+    var code=err&&err.code;
+    if(code==='conflict'){ status='err'; statusMsg=a.conflict; }
+    else if(code==='not_writer'||code==='not_granted'){ status='err'; statusMsg=a.readonly; try{sessionStorage.removeItem('rf-admin-open');}catch(e){} }
+    else { status='err'; statusMsg=a.failed; try{sessionStorage.removeItem('rf-admin-open');}catch(e){} }
+    renderDrawer();
+  });
+}
+
+render();
+
+if(window.claude && typeof window.claude.use==='function'){
+  Promise.all([window.claude.use('artifact'),window.claude.use('user'),window.claude.use('assets')]).then(function(r){
+    artifactNS=r[0]; var user=r[1]; assetsNS=r[2];
+    var can=false; try{ can = (user && user.canEdit) ? user.canEdit() : false; }catch(e){}
+    Promise.resolve(can).catch(function(){return false;}).then(function(ok){
+      isAdmin = !!(artifactNS && ok);
+      if(!isAdmin) return;
+      var saved=null, reopen=false;
+      try{ saved=sessionStorage.getItem('rf-draft'); reopen=sessionStorage.getItem('rf-admin-open')==='1'; sessionStorage.removeItem('rf-admin-open'); }catch(e){}
+      if(saved){ try{ draft=JSON.parse(saved); dirty=true; }catch(e){ draft=null; } }
+      render();
+      if(draft||reopen){ openDrawer(); if(saved) toast(A[lang].restore); }
+    });
+  }).catch(function(){});
+}
+})();
+</script>
+
+</body>
+</html>
